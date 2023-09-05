@@ -8,19 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var tabSelection: Int = 0
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView(selection:$tabSelection){
+            
+            FirstScreen(tabSelection: $tabSelection).tag(0).tabItem(
+                {
+                HStack{
+                    Image(systemName: "figure.mixed.cardio")
+                    Text("First Screen")
+                }
+            })
+            SecondScreen().tag(1).tabItem({
+                HStack{
+                    Image(systemName: "figure.walk")
+                    Text("Second Screen")
+                }
+            })
+            ThirdScreen().tag(2).tabItem({
+                HStack{
+                    Image(systemName: "figure.run")
+                    Text("Third Screen")
+                }
+            })
         }
-        .padding()
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-    }
+            ContentView()
+        }
 }
