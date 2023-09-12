@@ -11,7 +11,7 @@ import SwiftUI
 struct FirstHomeworkApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(SportsViewModel())
         }
     }
 }

@@ -24,7 +24,7 @@ final class SportsViewModel: ObservableObject{
 
 
 struct ListScreen: View {
-    @StateObject var SportsVM:SportsViewModel = .init()
+    @EnvironmentObject var SportsVM:SportsViewModel
     
     var body: some View {
                 VStack{
@@ -43,6 +43,7 @@ struct ListScreenDetail: View {
             VStack {
                 Text(self.sport.text).font(.system(size: 200))
             }
+            
     }
 }
 

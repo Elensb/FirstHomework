@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FirstScreen: View {
     @Binding var tabSelection: Int
-    @StateObject var SportsVM:SportsViewModel = .init()
+    @EnvironmentObject var SportsVM:SportsViewModel
     var body: some View {
         NavigationView{
             
@@ -20,7 +20,7 @@ struct FirstScreen: View {
                     label:{
                     Text("List")})
                 .font(.largeTitle)
-                //.fontWeight(.thin)
+                .fontWeight(.thin)
                 .foregroundColor(Color.black)
                 .padding()
                 
